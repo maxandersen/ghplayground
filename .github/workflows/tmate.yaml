@@ -8,5 +8,9 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Remove Java
+      run: |
+        sudo rm -rf /Library/Java/*
+        sudo rm -rf /Users/runner/hostedtoolcache/Java*
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
